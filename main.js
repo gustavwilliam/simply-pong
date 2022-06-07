@@ -10,7 +10,7 @@ const PADDLE_OFFSET = 15;  // Offset from edge of canvas
 const PADDLE_STEP = 3;  // Paddle movement per frame
 const BALL_RADIUS = 8;
 const MS_PER_FRAME = 10;  // Milliseconds per frame
-const WIN_SCORE = 1;
+const WIN_SCORE = 10;
 const MAX_Y_BOUNCE = 4;
 
 let intervalRef;
