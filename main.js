@@ -195,7 +195,17 @@ let ai = {
         set x (x) { this._x = x },
         set y (y) { this._y = y },
         direction: 0,  // -1 = up, 1 = down, 0 = none
+        aiThink () {
+            if (ball.y > this.y + PADDLE_HEIGHT / 2) {
+                this.direction = 1;
+            } else if (ball.y < this.y) {
+                this.direction = -1;
+            } else {
+                this.direction = 0;
+            }
+        },
         simulate () {
+            this.aiThink();  // Alters the direction, when relevant
             if (this.y + this.direction * PADDLE_STEP > 0 &&  // Top edge
                 this.y + PADDLE_HEIGHT + this.direction * PADDLE_STEP < canvas.height  // Bottom edge
             ) {
